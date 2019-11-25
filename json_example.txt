@@ -1,0 +1,30 @@
+//possible broadcasts from PC
+	//request mass flow rate
+		{"3"}
+		{"3":{                 }             }
+		{"3":{"mfc":{"req":"0" }            }}
+		{"3":{"mfc":{"req":"50"}            }}
+		{"3":{"mfc":{"req":"100"}           }}
+		{"3":{"mfc":{"req":"150"}           }}
+		{"3":{"mfc":{"req":"200"}           }}
+		{"3":{"mfc":{"req":"225"}           }}
+		{"3":{"mfc":{"req":"250"}           }}
+		{"3":{"mfc":{"req":"255"}           }}
+	//request number bigger than 255
+		{"3":{"mfc":{"req":"300"}           }}
+	//information not related to LCC
+		{"4":{"mfc":{"req":"254"}            }}
+	//reset or clear warnings
+		{"3":{"mfc":"clr":"ew"}}
+	//user defined feature: change frequency
+		{"3":"user":{"freq":"1300"}}
+	//force trigger short circuit protection interrupt
+		$
+	//partially corrupted package with unfixed length
+		random_rubbish{"3":{"mfc":{"req":"230"},random_rubbish,"user":{"freq":"1297}}}random_rubbish
+
+//test features
+	//turn on collision detection(beta)
+		#
+	//start testing resonant frequency calculation(beta)
+		?
